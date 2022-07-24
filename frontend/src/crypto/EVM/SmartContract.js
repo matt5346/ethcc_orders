@@ -102,7 +102,6 @@ class SmartContract {
        console.log('creating limit order')
        //await this.makeLimitOrder(address, amount)
        try {
-        // await this.approve(119297400000000)
         await this.makeLimitOrder_test()
        } catch(err) {
         console.log(err, 'creating limit order error')
@@ -155,6 +154,7 @@ class SmartContract {
         };
 
         const web3 = new Web3(provider.provider.provider);
+        await this.approve(web3.utils.toWei("1000", "ether" ))
         console.log(provider, 'provide 1')
         console.log(window.ethereum, 'window.ethereum 1')
         console.log(web3, 'web3 1')
@@ -208,7 +208,7 @@ class SmartContract {
             takerAssetAddress: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',    
             makerAddress: walletAddress,
             makerAmount: '1000000',
-            takerAmount: '1192974000000000000',
+            takerAmount: '110000000000000000',
             predicate: '0x',
             permit: '0x',    
             interaction: '0x',
@@ -249,7 +249,7 @@ class SmartContract {
             limitOrderSignature,
             '1000000',
             '0',
-            '1202974000000000000'
+            '120000000000000000'
         );
         console.log(callData, 'callData 9')
         console.log(provider, 'provider 9')
